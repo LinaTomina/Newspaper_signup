@@ -1,0 +1,27 @@
+{% extends 'flatpages/default.html'%}
+
+{% block title %}
+Все новости
+
+{% endblock title %}
+
+{% block content %}
+
+{% if post.choice %}
+<h3>Новость номер {{ post.id }} </h3>
+{% else %}
+<h3>Статья номер {{ post.id }} </h3>
+{% endif %}
+<h3>
+    {% for categoty in post.categories.all %}
+    {{ category.category_name }}
+    {% endfor %}
+
+    <form method = "GET">
+        <input type = "submit" value = "подписаться на категорию">
+    </form>
+
+    <p><input type = "button" type ="submit" value=" Подписаться " href="{% url 'subscribe' category.id %}"></p>
+</h3>
+
+{% endblock content %}

@@ -1,0 +1,12 @@
+{% extends 'flatpages/default.html'%}
+
+{% block title %}
+Подписка
+{% endblock title %}
+
+{% block content %}
+
+<h2>Категория новостей - {{ category.id }} </h2> 
+<p> Вы, {{ subscriber.username }}, подписаны на {{ category.id }}</p>
+
+{% endblock content %}
